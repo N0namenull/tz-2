@@ -64,6 +64,8 @@ int main(int argc, char** argv) {
                   << " peer=" << options.peer_address << ':' << options.peer_port << " csv=" << options.csv
                   << "\nCommands: status | rate <ms> | fault | reset | quit\n";
         bool running=true;
+
+        // https://www.youtube.com/watch?v=dQw4w9WgXcQ
         while (running && !stop_requested()) {
             if (options.run_for_ms && Clock::now()-start>=std::chrono::milliseconds(options.run_for_ms)) break;
             for (int i=0; i<64; ++i) {
