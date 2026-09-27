@@ -1,0 +1,43 @@
+Collector listening 127.0.0.1:51782 peer=127.0.0.1:51781 csv=telemetry.csv
+Commands: status | rate <ms> | fault | reset | quit
+SAMPLE seq=3 temperature_c=25.05 humidity_pct=50.13 uptime_ms=202
+SAMPLE seq=4 temperature_c=25.10 humidity_pct=50.27 uptime_ms=408
+SAMPLE seq=5 temperature_c=25.15 humidity_pct=50.41 uptime_ms=613
+SAMPLE seq=6 temperature_c=25.20 humidity_pct=50.55 uptime_ms=818
+STATUS rx=4 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=never pending=no
+HEARTBEAT status=OK seq=7
+SAMPLE seq=8 temperature_c=25.26 humidity_pct=50.69 uptime_ms=1030
+SAMPLE seq=9 temperature_c=25.31 humidity_pct=50.82 uptime_ms=1236
+COMMAND status
+STATUS rx=7 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=301 pending=no
+COMMAND rate 500
+ACK cmd=10 cmd_seq=1 matched
+SAMPLE seq=11 temperature_c=25.48 humidity_pct=51.28 uptime_ms=1919
+STATUS rx=9 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=1000 pending=no
+HEARTBEAT status=OK seq=12
+SAMPLE seq=13 temperature_c=25.61 humidity_pct=51.61 uptime_ms=2430
+SAMPLE seq=14 temperature_c=25.73 humidity_pct=51.95 uptime_ms=2939
+STATUS rx=12 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=1000 pending=no
+HEARTBEAT status=OK seq=15
+COMMAND fault
+ACK cmd=11 cmd_seq=2 matched
+STATUS rx=14 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=1015 pending=no
+HEARTBEAT status=FAULT seq=17
+COMMAND rate 200
+NACK cmd=10 cmd_seq=3 reason=BUSY matched
+COMMAND reset
+ACK cmd=12 cmd_seq=4 matched
+STATUS rx=17 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=1002 pending=no
+HEARTBEAT status=OK seq=20
+SAMPLE seq=21 temperature_c=26.27 humidity_pct=53.35 uptime_ms=5129
+SAMPLE seq=22 temperature_c=26.32 humidity_pct=53.48 uptime_ms=5335
+SAMPLE seq=23 temperature_c=26.37 humidity_pct=53.61 uptime_ms=5541
+SAMPLE seq=24 temperature_c=26.42 humidity_pct=53.74 uptime_ms=5747
+SAMPLE seq=25 temperature_c=26.47 humidity_pct=53.87 uptime_ms=5953
+COMMAND status
+STATUS rx=23 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=982 pending=no
+STATUS rx=23 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=1013 pending=no
+HEARTBEAT status=OK seq=26
+COMMAND quit
+STATUS rx=24 loss=0 loss_rate=0.00% duplicates_or_old=0 invalid=0 foreign=0 heartbeat_age_ms=63 pending=no
+Stopped

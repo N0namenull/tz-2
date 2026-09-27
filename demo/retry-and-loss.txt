@@ -1,0 +1,22 @@
+Collector listening 127.0.0.1:51779 peer=127.0.0.1:51778 csv=wire.csv
+Commands: status | rate <ms> | fault | reset | quit
+COMMAND rate 500
+ACK cmd=11 cmd_seq=1 unsolicited
+ACK cmd=10 cmd_seq=2 unsolicited
+RETRY cmd=10 cmd_seq=1 attempt=2
+ACK cmd=10 cmd_seq=1 matched
+SAMPLE seq=102 temperature_c=25.00 humidity_pct=50.00 uptime_ms=102
+SAMPLE seq=101 temperature_c=25.00 humidity_pct=50.00 uptime_ms=101
+SAMPLE seq=104 temperature_c=25.00 humidity_pct=50.00 uptime_ms=104
+STATUS rx=6 loss=1 loss_rate=14.29% duplicates_or_old=1 invalid=1 foreign=1 heartbeat_age_ms=never pending=no
+COMMAND status
+STATUS rx=6 loss=1 loss_rate=14.29% duplicates_or_old=1 invalid=1 foreign=1 heartbeat_age_ms=never pending=no
+COMMAND reset
+RETRY cmd=12 cmd_seq=2 attempt=2
+STATUS rx=6 loss=1 loss_rate=14.29% duplicates_or_old=1 invalid=1 foreign=1 heartbeat_age_ms=never pending=yes
+RETRY cmd=12 cmd_seq=2 attempt=3
+STATUS rx=6 loss=1 loss_rate=14.29% duplicates_or_old=1 invalid=1 foreign=1 heartbeat_age_ms=never pending=yes
+TIMEOUT cmd=12 cmd_seq=2 result unknown
+COMMAND quit
+STATUS rx=6 loss=1 loss_rate=14.29% duplicates_or_old=1 invalid=1 foreign=1 heartbeat_age_ms=never pending=no
+Stopped

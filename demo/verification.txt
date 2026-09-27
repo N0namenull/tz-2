@@ -1,0 +1,30 @@
+Verification date: 2026-09-25
+Verification environment: Windows x64
+IDE/toolchain: Visual Studio Community 2026 18.10.2
+Compiler: MSVC 19.51.36260.0, x64 (toolset directory 14.51.36231)
+Windows SDK: 10.0.26100.0
+Build system: Visual Studio bundled CMake 4.3.1-msvc1 and Ninja Multi-Config
+Configuration: Release x64, C++17
+Compiler flags: /W4 /permissive- /utf-8
+Build: SensorSim, Collector, unit_tests; no compiler warnings
+
+CTest final run:
+1/2 unit         Passed  0.04 sec
+2/2 integration  Passed 17.27 sec
+100% tests passed out of 2
+
+Unit output:
+PASS: protocol, state, deduplication, sequence statistics
+
+Integration output:
+PASS: sensor wire/state/timing/seq, collector ACK matching/retries/loss/CSV, two-process demo, CLI, port/CSV errors, EOF and timed shutdown
+
+Integration tests control the real MSVC-built Windows processes through redirected stdin and
+exchange real localhost UDP datagrams. Interactive keyboard editing was reviewed
+in code, not automated through a terminal UI. Build and CTest were launched
+from the Visual Studio developer environment using its bundled tools.
+
+collector.txt and sensor.txt are the final actual two-process demo.
+telemetry.csv is its recorded SAMPLE log.
+retry-and-loss.txt is the final independent Collector wire test.
+Only the CSV path in log headers is shortened for portability.

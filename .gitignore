@@ -1,0 +1,12 @@
+/build*/
+/.vs/
+*.user
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.a
+*.lib
+/telemetry.csv
+/test-results/

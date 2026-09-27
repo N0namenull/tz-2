@@ -1,0 +1,5 @@
+SensorSim listening 127.0.0.1:51781 peer=127.0.0.1:51782 period_ms=200
+ACK cmd=10 cmd_seq=1 period_ms=500 status=OK
+ACK cmd=11 cmd_seq=2 period_ms=500 status=FAULT
+NACK cmd=10 cmd_seq=3 period_ms=500 status=FAULT
+ACK cmd=12 cmd_seq=4 period_ms=200 status=OK
